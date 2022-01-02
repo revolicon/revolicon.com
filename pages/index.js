@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import Search from "../components/home/search";
+import Hero from "../components/home/hero";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <Head>
         <title>Revolicon</title>
       </Head>
-      <div className="container px-3 sm:px-8 space-y-6">
+      <Hero/>
+      <div className="container space-y-6 -mt-36 relative z-10">
         <Search/>
       </div>
     </>
