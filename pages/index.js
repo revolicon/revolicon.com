@@ -1,7 +1,16 @@
+import Head from "next/head";
+
+import Search from "../components/home/search";
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <Head>
+        <title>Revolicon</title>
+      </Head>
+      <div className="container px-3 sm:px-8">
+        <Search/>
+      </div>
+    </>
   )
 }
