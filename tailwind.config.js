@@ -24,6 +24,9 @@ module.exports = {
           600: "#1b2a60"
         }
       },
+      padding: {
+        38: '9.5rem',
+      }
     },
     screens: {
       sm: '640px',

@@ -16,3 +16,7 @@ body {
 #__next {
   @apply flex flex-col;
 }
+
+.container {
+  @apply px-3 sm:px-8;
+}
