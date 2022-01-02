@@ -4,7 +4,7 @@ import Footer from "./layout/footer";
 export default function Layout({ children }) {
   return (
     <>
-      <Header size="fit" position="absolute"/>
+      <Header size="fit" location="hero"/>
       {children}
       <Footer/>
     </>
