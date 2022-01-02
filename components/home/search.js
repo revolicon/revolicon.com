@@ -55,10 +55,10 @@ function List() {
     { type: "empty" }
   ]
   return (
-    <div className="flex flex-wrap gap-6">
+    <div className="grid grid-cols-10 gap-6">
       {list.map((item, index) => {
         return (
-          <div className="w-1/10" key={index}>
+          <div key={index}>
             <ListItem type={item.type} icon={item.icon}/>
           </div>
         )
@@ -73,8 +73,8 @@ function ListItem({ type, icon }) {
     icon: "shadow-[0px_16px_16px_#F7F9FB] bg-white"
   }
   return (
-    <div className={`w-[72px] h-[72px] flex items-center justify-center rounded-2xl text-[36px] ${style[type]}`}>
-      {type === "icon" && <i className={`re-regular re-${icon}`}/>}
+    <div className={`w-full pt-[100%] relative rounded-2xl text-[36px] ${style[type]}`}>
+      {type === "icon" && <i className={`re-regular re-${icon} absolute top-0 left-0 flex items-center justify-center w-full h-full`}/>}
     </div>
   )
 }
@@ -86,7 +86,7 @@ export default function Search() {
         <Input/>
         <Suggestions/>
       </div>
-      <div className="-mb-6">
+      <div className="-mb-6 w-full">
         <List/>
       </div>
     </div>
