@@ -13,3 +13,6 @@ body {
 
   @apply bg-neutral-100 text-neutral-500;
 }
+#__next {
+  @apply flex flex-col;
+}
