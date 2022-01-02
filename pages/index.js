@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Revolicon</title>
       </Head>
-      <div className="container px-3 sm:px-8">
+      <div className="container px-3 sm:px-8 space-y-6">
         <Search/>
       </div>
     </>
