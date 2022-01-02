@@ -26,6 +26,7 @@ module.exports = {
       },
       padding: {
         38: '9.5rem',
+        54: '13.5rem',
       },
       letterSpacing: {
         'title': '-0.015em'
