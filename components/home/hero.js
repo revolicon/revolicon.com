@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from "next/link";
+import React from "react";
 
 function Text() {
   return (
@@ -50,16 +51,17 @@ function ActionsLink({ href, children }) {
 function ActionsDot() {
   return <span className="w-6 text-center select-none">·</span>
 }
-function ActionsButton({ href, children, className, icon }) {
+const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref) => {
   return (
-    <a href={href || null} className={`flex items-center justify-center gap-3 text-neutral-50 py-3 px-6 rounded-full font-semibold select-none ${className}`}>
+    <a href={href || null} ref={ref} className={`flex items-center justify-center gap-3 text-neutral-50 py-3 px-6 rounded-full font-semibold select-none ${className}`}>
       <div className="w-6 h-6 flex items-center text-2xl">
         <i className={`re-regular re-${icon}`}/>
       </div>
       <span>{children}</span>
     </a>
   )
-}
+})
+      ActionsButton.displayName = "ActionsButton"
 
 export default function Hero() {
   return (
@@ -73,6 +75,8 @@ export default function Hero() {
           width={840}
           height={800}
           quality={100}
+          draggable={false}
+          priority={true}
         />
       </div>
       <div className="container relative z-10 flex flex-col gap-8">
