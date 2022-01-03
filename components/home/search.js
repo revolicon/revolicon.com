@@ -1,10 +1,10 @@
 function Input() {
   return (
-    <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6">
+    <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300">
       <svg className="w-6 h-6 flex-none" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fillRule="evenodd" clipRule="evenodd" d="M16.6177 18.0319C15.078 19.2635 13.125 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11C20 13.125 19.2635 15.078 18.0319 16.6177L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L16.6177 18.0319ZM18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z" fill="#181C1F"/>
       </svg>
-      <input className="w-full h-full focus:outline-none outline-none font-medium text-neutral-500 placeholder:text-neutral-400 text-lg flex-1" type="text" placeholder="Search 8,023 icons across all categories"/>
+      <input className="w-full h-full focus:outline-none outline-none font-medium text-neutral-500 placeholder:text-neutral-400 text-lg flex-1 select-none" type="text" placeholder="Search 8,023 icons across all categories"/>
     </label>
   )
 }

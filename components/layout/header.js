@@ -11,7 +11,7 @@ function Navigation() {
     <nav className="flex items-center gap-12">
       {links.map(({ href, label }) => (
         <Link href={href} key={label} >
-          <a className="text-base font-medium leading-normal text-blue-100">{label}</a>
+          <a className="text-base font-medium leading-normal text-blue-100 select-none">{label}</a>
         </Link>
       ))}
     </nav>
