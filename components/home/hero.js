@@ -45,7 +45,7 @@ function Actions() {
   )
 }
 function ActionsLink({ href, children }) {
-  return <a href={href || null} className="underline underline-offset-1 text-blue-300 hover:text-blue-50 transition-colors cursor-pointer">{children}</a>
+  return <a href={href || null} className="underline underline-offset-1 font-medium text-blue-300 hover:text-blue-50 transition-colors cursor-pointer">{children}</a>
 }
 function ActionsDot() {
   return <span className="w-6 text-center">·</span>
