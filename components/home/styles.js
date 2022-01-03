@@ -106,7 +106,7 @@ function PreviewLine() {
 }
 function PreviewItem({ type, icon, delay }) {
   return (
-    <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 43} isVisible={true}>
+    <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true}>
       <div className="w-8 h-8 flex justify-center items-center text-[32px]">
         <i className={`re-${type} re-${icon}`}/>
       </div>
