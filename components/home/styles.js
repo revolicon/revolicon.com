@@ -93,7 +93,7 @@ function Preview({ type }) {
         <div key={index}>
           <PreviewLine/>
           <div className="flex gap-16 justify-center py-2" key={index}>
-            {item.map((slug, key, i) => <PreviewItem delay={(key+1)*(index+1)} key={i} type={type} icon={slug} />)}
+            {item.map((slug, key) => <PreviewItem delay={(key+1)*(index+1)} key={key} type={type} icon={slug} />)}
           </div>
           <PreviewLine/>
         </div>

@@ -1,6 +1,9 @@
+import React from "react";
+
 import Image from 'next/image'
 import Link from "next/link";
-import React from "react";
+
+import styles from '/styles/home/Heros.module.scss'
 
 function Text() {
   return (
@@ -65,8 +68,8 @@ const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref
 
 export default function Hero() {
   return (
-    <div className="bg-blue-500 overflow-hidden relative pb-54 pt-38">
-      <div className="absolute top-0 right-0 z-0 select-none pointer-events-none">
+    <div className={styles.hero}>
+      <div className={styles.hero__image}>
         <Image
           src="/images/home/hero.png"
           alt="Hero Image"
