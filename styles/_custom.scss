@@ -1,0 +1,19 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'ss01' on, 'ss03' on;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.02em;
+
+  @apply bg-neutral-100 text-neutral-500;
+
+  #__next {
+    @apply flex flex-col;
+  }
+}
+
+.container {
+  @apply px-3 sm:px-8;
+}

@@ -11,7 +11,8 @@
     "next": "12.0.7",
     "react": "17.0.2",
     "react-animated-css": "^1.2.1",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.45.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.1",
