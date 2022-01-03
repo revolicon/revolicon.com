@@ -48,7 +48,7 @@ function ActionsLink({ href, children }) {
   return <a href={href || null} className="underline underline-offset-1 font-medium text-blue-300 hover:text-blue-50 transition-colors cursor-pointer">{children}</a>
 }
 function ActionsDot() {
-  return <span className="w-6 text-center">·</span>
+  return <span className="w-6 text-center select-none">·</span>
 }
 function ActionsButton({ href, children, className, icon }) {
   return (
@@ -69,6 +69,7 @@ export default function Hero() {
           src="/images/home/hero.png"
           alt="Hero Image"
           layout="fixed"
+          loading="eager"
           width={840}
           height={800}
           quality={100}
