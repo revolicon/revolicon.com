@@ -30,6 +30,9 @@ module.exports = {
       },
       letterSpacing: {
         'title': '-0.015em'
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.6, 0.6, 0, 1)'
       }
     },
     screens: {

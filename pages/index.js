@@ -14,7 +14,7 @@ export default function Home() {
       <div className="container space-y-6 -mt-36 relative z-10">
         <Search/>
         <Styles/>
-        <div className="flex h-32"></div>
+        <div className="flex h-32"/>
       </div>
     </>
   )
