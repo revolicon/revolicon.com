@@ -3,7 +3,8 @@ import React from "react";
 import Image from 'next/image'
 import Link from "next/link";
 
-import styles from '/styles/home/Heros.module.scss'
+import Icons from "/public/icons.json";
+import Styles from '/styles/home/Heros.module.scss'
 
 function Text() {
   return (
@@ -37,11 +38,11 @@ function Actions() {
         </Link>
       </div>
       <div className="flex items-center justify-center gap-2 text-blue-300">
-        <ActionsLink>Version 1.0</ActionsLink>
+        <ActionsLink>Version {Icons.version}</ActionsLink>
         <ActionsDot/>
         <ActionsLink>8,023 Icons</ActionsLink>
         <ActionsDot/>
-        <ActionsLink>48 Categories</ActionsLink>
+        <ActionsLink>{Icons.category.length} Categories</ActionsLink>
         <ActionsDot/>
         <ActionsLink>Download</ActionsLink>
       </div>
@@ -69,7 +70,7 @@ const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref
 export default function Hero() {
   return (
     <div className="bg-blue-500 overflow-hidden relative pb-54 pt-38">
-      <div className={styles.hero__image}>
+      <div className={Styles.hero__image}>
         <Image
           src="/images/home/hero.png"
           alt="Hero Image"
