@@ -68,7 +68,7 @@ const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
+    <div className="bg-blue-500 overflow-hidden relative pb-54 pt-38">
       <div className={styles.hero__image}>
         <Image
           src="/images/home/hero.png"

@@ -1,6 +1,4 @@
 .hero {
-  @apply bg-blue-500 overflow-hidden relative pb-54 pt-38;
-
   &__image {
     @apply absolute top-0 z-0 select-none pointer-events-none;
     left: 50%;

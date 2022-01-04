@@ -1,0 +1,46 @@
+{
+  "style": [
+    {
+      "slug": "regular",
+      "name": "Regular",
+      "active": true
+    },
+    {
+      "slug": "solid",
+      "name": "Solid",
+      "active": true
+    },
+    {
+      "slug": "thin",
+      "name": "Thin",
+      "active": false
+    },
+    {
+      "slug": "duotone",
+      "name": "Duotone",
+      "active": false
+    }
+  ],
+  "category": [
+    {
+      "slug": "security",
+      "name": "Security",
+      "icon": "shield"
+    },
+    {
+      "slug": "film-video",
+      "name": "Film, Video",
+      "icon": "video"
+    },
+    {
+      "slug": "music-audio",
+      "name": "Music, Audio",
+      "icon": "headphones"
+    },
+    {
+      "slug": "media",
+      "name": "Media Playback",
+      "icon": "play"
+    }
+  ]
+}

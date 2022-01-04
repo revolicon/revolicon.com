@@ -4,6 +4,7 @@ import {Animated} from "react-animated-css";
 import Image from "next/image";
 
 import Browser from "./browser";
+import Icons from "/public/icons.json";
 
 function Header({ badge, category, title, description, children, style, className }) {
   return (
@@ -16,38 +17,18 @@ function Header({ badge, category, title, description, children, style, classNam
   )
 }
 
-function Category({ category, setCategory }) {
-  let list = [
-    {
-      slug: "regular",
-      name: "Line",
-      active: true
-    },
-    {
-      slug: "solid",
-      name: "Solid",
-      active: true
-    },
-    {
-      slug: "duotone",
-      name: "Duotone",
-      active: false
-    },
-    {
-      slug: "thin",
-      name: "Thin",
-      active: false
-    }
-  ]
+console.log();
+
+function Style({ category, setCategory }) {
   return (
     <div className="flex gap-4">
-      {list.map((item) => (
-        <CategoryItem item={item} key={item.slug} category={category} setCategory={setCategory}/>
+      {Icons.style.map((item) => (
+        <StyleItem item={item} key={item.slug} category={category} setCategory={setCategory}/>
       ))}
     </div>
   )
 }
-function CategoryItem({ item, category, setCategory }) {
+function StyleItem({ item, category, setCategory }) {
   return (
     <div
       className={`flex flex-col items-center gap-3 relative ${item.active ? "cursor-pointer" : "cursor-help"}`}
@@ -82,13 +63,20 @@ function CategoryItem({ item, category, setCategory }) {
   )
 }
 
-function Preview({ type }) {
+function Preview({ category }) {
+  return Icons.style.map((item, key) =>
+    item.active &&
+    item.slug === category &&
+    <PreviewList type={item.slug} key={key}/>
+  )
+}
+function PreviewList({ type }) {
   let list = [
     ["piano", "guitar", "headphones", "dial-5"],
     ["clapperboard", "film", "film-canister", "video"]
   ]
   return (
-    <div className="my-auto flex flex-col gap-6">
+    <div className="my-auto flex flex-col gap-6" data-style={type}>
       {list.map((item, index) => (
         <div key={index}>
           <PreviewLine/>
@@ -101,9 +89,6 @@ function Preview({ type }) {
     </div>
   )
 }
-function PreviewLine() {
-  return <div className="h-0.5 w-full flex" style={{ background: "linear-gradient(90deg, rgba(247, 249, 251, 0.24) 0%, #F7F9FB 50.52%, rgba(247, 249, 251, 0.24) 100%)" }}/>;
-}
 function PreviewItem({ type, icon, delay }) {
   return (
     <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true}>
@@ -113,9 +98,11 @@ function PreviewItem({ type, icon, delay }) {
     </Animated>
   )
 }
+function PreviewLine() {
+  return <div className="h-0.5 w-full flex" style={{ background: "linear-gradient(90deg, rgba(247, 249, 251, 0.24) 0%, #F7F9FB 50.52%, rgba(247, 249, 251, 0.24) 100%)" }}/>;
+}
 
 export default function Styles() {
-  let categories = ["regular", "solid"]
   let [category, setCategory] = useState("regular");
 
   return (
@@ -128,14 +115,14 @@ export default function Styles() {
           title="Blends right in"
           description="Revolicon is available in two styles, regular and solid - with even more coming in Version 2."
         />
-        <Category category={category} setCategory={setCategory}/>
+        <Style category={category} setCategory={setCategory}/>
       </div>
       <div className="pt-12">
         <Browser className="rounded-t-2xl border-b-0" style={{
           width: 456,
           height: 268
         }}>
-          {categories.map(item => item === category ? <Preview type={item} key={item}/> : null)}
+          <Preview category={category}/>
         </Browser>
       </div>
     </div>
