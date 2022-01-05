@@ -2,6 +2,8 @@
   &__image {
     @apply absolute top-0 z-0 select-none pointer-events-none;
     left: 50%;
+    width: 840px;
+    height: 800px;
 
     @media (min-width: 1650px) {
       left: unset;

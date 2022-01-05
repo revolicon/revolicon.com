@@ -74,7 +74,6 @@ export default function Hero() {
         <Image
           src="/images/home/hero.png"
           alt="Hero Image"
-          layout="fixed"
           loading="eager"
           width={840}
           height={800}
