@@ -35,8 +35,9 @@ function StyleItem({ item, category, setCategory }) {
           <Image
             src={`/images/home/styles/${item.slug}.png`}
             alt={`${item.name} Icon`}
-            width={64}
-            height={64}
+            width={128}
+            height={128}
+            quality={100}
             draggable={false}
           />
         </div>
@@ -79,7 +80,7 @@ function PreviewList({ type }) {
 }
 function PreviewItem({ type, icon, delay }) {
   const [isComponentMounted, setIsComponentMounted] = useState(false)
-  
+
   useEffect(() => setIsComponentMounted(true), [])
   if(!isComponentMounted) return null;
 
