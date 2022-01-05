@@ -3,21 +3,13 @@ import {Animated} from "react-animated-css";
 
 import Image from "next/image";
 
-import Browser from "./browser";
 import Icons from "/public/icons.json";
 
-function Header({ badge, category, title, description, children, style, className }) {
-  return (
-    <div className={`flex flex-col gap-3 w-full ${className}`} style={style}>
-      {badge && <div className="flex items-center">{badge}</div>}
-      <div className="text-lg font-medium leading-6 text-blue-500">{category}</div>
-      <div className="text-[32px] font-semibold leading-10 tracking-title text-neutral-500">{title}</div>
-      <div className="text-lg leading-6 text-neutral-400">{description || children}</div>
-    </div>
-  )
-}
+import { Header } from "./card";
+import Browser from "./browser";
+import Badge from "./badge";
 
-console.log();
+console.log(this);
 
 function Style({ category, setCategory }) {
   return (
@@ -34,9 +26,7 @@ function StyleItem({ item, category, setCategory }) {
       className={`flex flex-col items-center gap-3 relative ${item.active ? "cursor-pointer" : "cursor-help"}`}
       onClick={() => item.active && setCategory(item.slug)}
     >
-      <div className={`absolute z-10 px-3 py-1.5 bg-blue-100 rounded-full ring-2 ring-inset ring-blue-500 -top-2 -right-1.5 ${item.active ? "hidden" : "inline-flex"}`}>
-        <div className="text-sm font-medium leading-4 text-center text-blue-500">Soon</div>
-      </div>
+      <Badge show={!item.active}>Soon</Badge>
       <div className="px-4">
         <div
           className={[
@@ -55,7 +45,7 @@ function StyleItem({ item, category, setCategory }) {
       </div>
       <div
         className={[
-          `text-lg font-medium leading-6 transition-all duration-300 ease-smooth`,
+          `text-lg font-medium leading-6 transition-all duration-300 ease-smooth select-none`,
           (category === item.slug ? "text-blue-500" : "text-neutral-400")
         ].join(" ")}
       >{item.name}</div>
