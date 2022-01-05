@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Animated} from "react-animated-css";
 
 import Image from "next/image";
@@ -8,8 +8,6 @@ import Icons from "/public/icons.json";
 import { Header } from "./card";
 import Browser from "./browser";
 import Badge from "./badge";
-
-console.log(this);
 
 function Style({ category, setCategory }) {
   return (
@@ -80,6 +78,11 @@ function PreviewList({ type }) {
   )
 }
 function PreviewItem({ type, icon, delay }) {
+  const [isComponentMounted, setIsComponentMounted] = useState(false)
+  
+  useEffect(() => setIsComponentMounted(true), [])
+  if(!isComponentMounted) return null;
+
   return (
     <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true}>
       <div className="w-8 h-8 flex justify-center items-center text-[32px]">
