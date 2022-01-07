@@ -5,8 +5,8 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/3964059729/Regular/style.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/6479ba73c0/Solid/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/17ded3f378/Regular/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/d5eb9b2366/Solid/style.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
       </Head>
       <body>
