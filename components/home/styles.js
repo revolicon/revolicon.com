@@ -24,22 +24,24 @@ function StyleItem({ item, category, setCategory }) {
       className={`flex flex-col items-center gap-3 relative ${item.active ? "cursor-pointer" : "cursor-help"}`}
       onClick={() => item.active && setCategory(item.slug)}
     >
-      <Badge show={!item.active}>Soon</Badge>
+      <Badge show={!item.active} className="-top-1.5 -right-1">Soon</Badge>
       <div className="px-4">
         <div
           className={[
-            "border-4 border-white h-[72px] w-[72px] overflow-hidden rounded-2xl select-none ring-2 transition-all duration-300 ease-smooth",
-            item.active ? (category === item.slug ? "ring-blue-500" : "ring-[#E0E7FF]") : "ring-blue-100",
+            "border-2 transition-all duration-300 ease-smooth rounded-2xl",
+            item.active ? (category === item.slug ? "border-blue-500" : "border-[#E0E7FF]") : "border-blue-100"
           ].join(" ")}
         >
-          <Image
-            src={`/images/home/styles/${item.slug}.png`}
-            alt={`${item.name} Icon`}
-            width={128}
-            height={128}
-            quality={100}
-            draggable={false}
-          />
+          <div className="border-4 border-white h-[72px] w-[72px] overflow-hidden rounded-2xl select-none">
+            <Image
+              src={`/images/home/styles/${item.slug}.png`}
+              alt={`${item.name} Icon`}
+              width={128}
+              height={128}
+              quality={100}
+              draggable={false}
+            />
+          </div>
         </div>
       </div>
       <div
