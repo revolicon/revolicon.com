@@ -74,7 +74,7 @@ function ListItem({ type, icon }) {
   }
   return (
     <div className={`w-full pt-[100%] relative rounded-2xl text-[36px] ${style[type]}`}>
-      {type === "icon" && <i className={`re-regular re-${icon} absolute top-0 left-0 flex items-center justify-center w-full h-full`}/>}
+      {type === "icon" && <i className={`re-line re-${icon} absolute top-0 left-0 flex items-center justify-center w-full h-full`}/>}
     </div>
   )
 }

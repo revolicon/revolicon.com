@@ -59,7 +59,7 @@ const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref
   return (
     <a href={href || null} ref={ref} className={`flex items-center justify-center gap-3 text-neutral-50 py-3 px-6 rounded-full font-semibold select-none ${className}`}>
       <div className="w-6 h-6 flex items-center text-2xl">
-        <i className={`re-regular re-${icon}`}/>
+        <i className={`re-line re-${icon}`}/>
       </div>
       <span>{children}</span>
     </a>

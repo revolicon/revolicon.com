@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/17ded3f378/Regular/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/91dee2f5db/Revolicon-Line/style.css"/>
         <link rel="stylesheet" href="https://i.icomoon.io/public/temp/d5eb9b2366/Solid/style.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
       </Head>

@@ -2,8 +2,8 @@
   "version": "1.0",
   "style": [
     {
-      "slug": "regular",
-      "name": "Regular",
+      "slug": "line",
+      "name": "Line",
       "active": true
     },
     {
