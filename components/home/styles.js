@@ -1,13 +1,15 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Animated} from "react-animated-css";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import Icons from "/public/icons.json";
 
 import { Header } from "./card";
 import Browser from "./browser";
 import Badge from "./badge";
+import Preview from "./preview";
 
 function Style({ category, setCategory }) {
   return (
@@ -54,48 +56,28 @@ function StyleItem({ item, category, setCategory }) {
   )
 }
 
-function Preview({ category }) {
-  return Icons.style.map((item, key) =>
-    item.active &&
-    item.slug === category &&
-    <PreviewList type={item.slug} key={key}/>
-  )
-}
-function PreviewList({ type }) {
+function BrowserPreview({ category, icon }) {
   let list = [
     ["piano", "guitar", "headphones", "dial-5"],
     ["clapperboard", "film", "film-canister", "video"]
   ]
-  return (
-    <div className="my-auto flex flex-col gap-6" data-style={type}>
-      {list.map((item, index) => (
-        <div key={index}>
-          <PreviewLine/>
-          <div className="flex gap-16 justify-center py-2" key={index}>
-            {item.map((slug, key) => <PreviewItem delay={(key+1)*(index+1)} key={key} type={type} icon={slug} />)}
-          </div>
-          <PreviewLine/>
-        </div>
-      ))}
-    </div>
+
+  return Icons.style.map((item, key) =>
+    item.active &&
+    item.slug === category &&
+    <Preview type={item.slug} key={key} list={list} icon={icon}/>
   )
 }
-function PreviewItem({ type, icon, delay }) {
-  const [isComponentMounted, setIsComponentMounted] = useState(false)
-
-  useEffect(() => setIsComponentMounted(true), [])
-  if(!isComponentMounted) return null;
-
+function BrowserPreviewIcon({ type, icon, delay }) {
   return (
-    <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true}>
-      <div className="w-8 h-8 flex justify-center items-center text-[32px]">
-        <i className={`re-${type} re-${icon}`}/>
-      </div>
-    </Animated>
+    <Link href={`/icons/${icon}?s=${type}`}>
+      <a>
+        <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true} className="flex justify-center items-center w-8 h-8">
+          <i className={`re-${type} re-${icon}`}/>
+        </Animated>
+      </a>
+    </Link>
   )
-}
-function PreviewLine() {
-  return <div className="h-0.5 w-full flex" style={{ background: "linear-gradient(90deg, rgba(247, 249, 251, 0.24) 0%, #F7F9FB 50.52%, rgba(247, 249, 251, 0.24) 100%)" }}/>;
 }
 
 export default function Styles() {
@@ -118,7 +100,7 @@ export default function Styles() {
           width: 456,
           height: 268
         }}>
-          <Preview category={category}/>
+          <BrowserPreview category={category} icon={BrowserPreviewIcon}/>
         </Browser>
       </div>
     </div>

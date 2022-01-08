@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function Header({ badge, category, title, description, button, children, style, className }) {
-  console.log(button);
   return (
     <div className={`flex flex-col items-start gap-6 w-full ${className}`} style={style}>
       {badge && (
