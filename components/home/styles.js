@@ -84,7 +84,7 @@ export default function Styles() {
   let [category, setCategory] = useState("line");
 
   return (
-    <div className="flex justify-between items-end px-12 bg-white rounded-3xl">
+    <div className="flex justify-between items-end px-12 bg-white rounded-3xl relative">
       <div className="py-12 h-full">
         <Header
           style={{ maxWidth: 448 }}
@@ -95,13 +95,22 @@ export default function Styles() {
         />
         <Style category={category} setCategory={setCategory}/>
       </div>
-      <div className="pt-12">
+      <div className="pt-12 relative z-10">
         <Browser className="rounded-t-2xl border-b-0" style={{
           width: 456,
           height: 268
         }}>
           <BrowserPreview category={category} icon={BrowserPreviewIcon}/>
         </Browser>
+      </div>
+      <div className="absolute right-0 bottom-0 select-none flex">
+        <Image
+          src="/images/home/styles/effect.png"
+          alt="Hero Logo"
+          width={450}
+          height={392}
+          quality={100}
+        />
       </div>
     </div>
   );
