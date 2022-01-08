@@ -105,13 +105,11 @@ export default function Styles() {
     <div className="flex justify-between items-end px-12 bg-white rounded-3xl">
       <div className="py-12 h-full">
         <Header
-          badge="brands"
           style={{ maxWidth: 448 }}
           className="mb-12"
           category="Styles"
           title="Blends right in"
           description="Revolicon is available in two styles, line and solid - with even more coming in Version 2."
-          button
         />
         <Style category={category} setCategory={setCategory}/>
       </div>
