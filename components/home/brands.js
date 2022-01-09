@@ -24,9 +24,9 @@ export default function Brands() {
           width: "100%",
           height: 268
         }}>
-          <Preview type="line" list={[
-            ["shield", "shield", "shield", "shield"],
-            ["shield", "shield", "shield", "shield"]
+          <Preview type="brands" list={[
+            ["apple", "google", "facebook", "amazon"],
+            ["spotify", "github", "discord", "paypal"]
           ]}/>
         </Browser>
       </div>
