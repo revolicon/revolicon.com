@@ -6,10 +6,10 @@ import Link from "next/link";
 
 import Icons from "/public/icons.json";
 
-import { Header } from "./card";
-import Browser from "./browser";
-import Badge from "./badge";
-import Preview from "./preview";
+import { Header } from "./elements/card";
+import Browser from "./elements/browser";
+import Badge from "./elements/badge";
+import Preview from "./elements/preview";
 
 function Style({ category, setCategory }) {
   return (
