@@ -1,2 +1,2 @@
 # revolicon.com
-Revolicon open-source web site
+Revolicon open-source website
