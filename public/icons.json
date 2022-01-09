@@ -39,9 +39,24 @@
       "icon": "headphones"
     },
     {
+      "slug": "people",
+      "name": "People",
+      "icon": "id-badge"
+    },
+    {
       "slug": "media",
       "name": "Media Playback",
       "icon": "play"
+    },
+    {
+      "slug": "photos",
+      "name": "Photos, Images",
+      "icon": "camera-polaroid"
+    },
+    {
+      "slug": "arrows",
+      "name": "Arrows",
+      "icon": "arrow-up-left-and-arrow-down-right"
     }
   ]
 }
