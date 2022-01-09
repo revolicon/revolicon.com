@@ -70,7 +70,10 @@ function BrowserPreview({ category, icon }) {
 }
 function BrowserPreviewIcon({ type, icon, delay }) {
   return (
-    <Link href={`/icons/${icon}?s=${type}`}>
+    <Link href={{
+      pathname: `/icons/[icon]`,
+      query: { s: type, icon },
+    }}>
       <a>
         <Animated animationIn="iconIn" animationInDuration={600} animationInDelay={delay * 44} isVisible={true} className="flex justify-center items-center w-8 h-8">
           <i className={`re-${type} re-${icon}`}/>

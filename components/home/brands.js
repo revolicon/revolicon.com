@@ -12,7 +12,10 @@ export default function Brands() {
           title="200+ Brand Icons"
           description="Easily add the most popular brand logos to your project or website."
           button={{
-            href: "/icons?s=brands"
+            href: {
+              pathname: "/icons",
+              query: { s: "brands" },
+            }
           }}
         />
       </div>

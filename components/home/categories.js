@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 import Icons from "/public/icons.json";
@@ -20,11 +21,16 @@ function BrowserPreview() {
           >
             <div className="flex gap-5 ml-5">
               {Icons.category.sort(() => .5 - Math.random()).map((item, key) => (
-                <div key={key} className="py-0.5">
-                  <div className="inline-flex gap-3 items-center justify-center px-6 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-neutral-100">
-                    <i className={`text-2xl leading-6 re-line re-${item.icon}`}/>
-                    <p className="text-base font-medium">{item.name}</p>
-                  </div>
+                <div key={key} className="py-0.5 px-1">
+                  <Link href={{
+                    pathname: '/icons',
+                    query: { c: item.slug },
+                  }}>
+                    <a className="inline-flex gap-3 items-center justify-center px-5 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-neutral-100">
+                      <i className={`text-2xl leading-6 re-line re-${item.icon}`}/>
+                      <p className="text-base font-medium">{item.name}</p>
+                    </a>
+                  </Link>
                 </div>
               ))}
             </div>
