@@ -38,19 +38,27 @@ function Actions() {
         </Link>
       </div>
       <div className="flex items-center justify-center gap-2 text-blue-300">
-        <ActionsLink>Version {Icons.version}</ActionsLink>
+        <Link href="/docs/changelog">
+          <a><ActionsLink>Version {Icons.version}</ActionsLink></a>
+        </Link>
         <ActionsDot/>
-        <ActionsLink>8,023 Icons</ActionsLink>
+        <Link href="/icons">
+          <a><ActionsLink>8,023 Icons</ActionsLink></a>
+        </Link>
         <ActionsDot/>
-        <ActionsLink>{Icons.category.length} Categories</ActionsLink>
+        <Link href={{ pathname: "/icons", query: { s: "solid,brands" } }}>
+          <a><ActionsLink>{Icons.category.length} Categories</ActionsLink></a>
+        </Link>
         <ActionsDot/>
-        <ActionsLink>Download</ActionsLink>
+        <Link href="/download">
+          <a><ActionsLink>Download</ActionsLink></a>
+        </Link>
       </div>
     </div>
   )
 }
-function ActionsLink({ href, children }) {
-  return <a href={href || null} className="underline underline-offset-1 font-medium text-blue-300 hover:text-blue-50 transition-colors cursor-pointer">{children}</a>
+function ActionsLink({ children }) {
+  return <span className="underline underline-offset-1 font-medium text-blue-300 hover:text-blue-50 transition-colors cursor-pointer">{children}</span>
 }
 function ActionsDot() {
   return <span className="w-6 text-center select-none">·</span>

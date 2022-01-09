@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import Icons from "/public/icons.json";
+
 function Input() {
   return (
     <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300">
@@ -16,7 +20,14 @@ function Suggestions() {
   )
 }
 function SuggestionsItem({ icon }) {
-  return <span className="text-blue-500 cursor-pointer">{icon}</span>
+  return (
+    <Link href={{
+      pathname: "/icons/[icon]",
+      query: { s: Icons.style[0].slug, icon }
+    }}>
+      <a className="text-blue-500 cursor-pointer">{icon}</a>
+    </Link>
+  )
 }
 
 function List() {
@@ -56,13 +67,11 @@ function List() {
   ]
   return (
     <div className="grid grid-cols-10 gap-6">
-      {list.map((item, index) => {
-        return (
-          <div key={index}>
-            <ListItem type={item.type} icon={item.icon}/>
-          </div>
-        )
-      })}
+      {list.map((item, index) => (
+        <div key={index}>
+          <ListItem type={item.type} icon={item.icon}/>
+        </div>
+      ))}
     </div>
   )
 }
