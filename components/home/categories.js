@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee";
 
 import Icons from "/public/icons.json";
 
-import { Header } from "./elements/card";
-import Browser, { BrowserLine } from "./elements/browser";
+import { Header } from "../elements/card";
+import Browser, { BrowserLine } from "../elements/browser";
 
 function BrowserPreview() {
   return (

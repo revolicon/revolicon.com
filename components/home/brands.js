@@ -1,6 +1,6 @@
-import {Header} from "./elements/card";
-import Browser from "./elements/browser";
-import Preview from "./elements/preview";
+import {Header} from "../elements/card";
+import Browser from "../elements/browser";
+import Preview from "../elements/preview";
 
 export default function Brands() {
   return (
