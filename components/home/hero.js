@@ -26,15 +26,16 @@ function Text() {
     </div>
   )
 }
+
 function Actions() {
   return (
     <div className="flex flex-col justify-center items-center gap-6">
       <div className="flex items-center gap-4">
-        <Link href="/icons" passHref>
-          <ActionsButton className="bg-neutral-500" icon="face-id-success">Browse Icons</ActionsButton>
+        <Link href="/icons">
+          <a><ActionsButton className="bg-neutral-500" icon="face-id-success">Browse Icons</ActionsButton></a>
         </Link>
-        <Link href="/start" passHref>
-          <ActionsButton className="bg-blue-400" icon="shield-tick">Get Started - <span className="font-normal">it’s free</span></ActionsButton>
+        <Link href="/start">
+          <a><ActionsButton className="bg-blue-400" icon="shield-tick">Get Started - <span className="font-normal">it’s free</span></ActionsButton></a>
         </Link>
       </div>
       <div className="flex items-center justify-center gap-2 text-blue-300">
@@ -63,17 +64,14 @@ function ActionsLink({ children }) {
 function ActionsDot() {
   return <span className="w-6 text-center select-none">·</span>
 }
-const ActionsButton = React.forwardRef(({ href, children, className, icon }, ref) => {
+function ActionsButton({ children, className, icon }) {
   return (
-    <a href={href || null} ref={ref} className={`flex items-center justify-center gap-3 text-neutral-50 py-3 px-6 rounded-full font-semibold select-none ${className}`}>
-      <div className="w-6 h-6 flex items-center text-2xl">
-        <i className={`re-line re-${icon}`}/>
-      </div>
+    <span className={`flex items-center justify-center gap-3 text-neutral-50 py-3 px-6 rounded-full font-medium select-none ${className}`}>
+      <span className="w-6 h-6 flex items-center text-2xl"><i className={`re-line re-${icon}`}/></span>
       <span>{children}</span>
-    </a>
+    </span>
   )
-})
-      ActionsButton.displayName = "ActionsButton"
+}
 
 export default function Hero() {
   return (

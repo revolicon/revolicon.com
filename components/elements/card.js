@@ -25,11 +25,12 @@ export function Header({ badge, category, title, description, button, children, 
       </div>
       {button && button.href && (
         <Link href={button.href}>
-          <a className="inline-flex items-center justify-center px-6 py-2 bg-neutral-50 border-2 rounded-full border-blue-100 transition-all duration-300 ease-smooth hover:border-blue-200">
-            {button.content || <i className="re-line re-arrow-right text-2xl leading-6 w-6 h-6 text-blue-500"/>}
+          <a className="group inline-flex items-center justify-center px-6 py-2 bg-neutral-50 border-2 rounded-full transition-all duration-300 ease-smooth border-blue-100 text-blue-500 hover:bg-blue-100">
+            {button.content || <i className="re-line re-arrow-right text-2xl leading-6 w-6 h-6"/>}
           </a>
         </Link>
       )}
     </div>
   )
 }
+

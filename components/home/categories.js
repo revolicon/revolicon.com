@@ -26,7 +26,7 @@ function BrowserPreview() {
                     pathname: '/icons',
                     query: { c: item.slug },
                   }}>
-                    <a className="inline-flex gap-3 items-center justify-center px-5 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-neutral-100">
+                    <a className="inline-flex gap-3 items-center justify-center px-5 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-blue-50 hover:text-blue-500">
                       <i className={`text-2xl leading-6 re-line re-${item.icon}`}/>
                       <p className="text-base font-medium">{item.name}</p>
                     </a>
