@@ -10,3 +10,7 @@ export default function Browser({ className, children, style }) {
     </div>
   )
 }
+
+export function BrowserLine() {
+  return <div className="h-0.5 w-full flex" style={{ background: "linear-gradient(90deg, rgba(247, 249, 251, 0.24) 0%, #F7F9FB 50.52%, rgba(247, 249, 251, 0.24) 100%)" }}/>;
+}
