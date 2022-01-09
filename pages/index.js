@@ -14,7 +14,7 @@ export default function Home() {
         <title>Revolicon</title>
       </Head>
       <Hero/>
-      <div className="container space-y-6 -mt-36 relative z-10 mb-32">
+      <div className="container space-y-6 -mt-36 relative z-10 mb-6">
         <Search/>
         <Styles/>
         <div className="flex gap-6">
