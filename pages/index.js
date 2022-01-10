@@ -6,6 +6,7 @@ import Styles from "../components/home/styles";
 import Categories from "../components/home/categories";
 import Brands from "../components/home/brands";
 import Animations from "../components/home/animations";
+import Features from "../components/home/features";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           <div className="w-1/2"><Animations/></div>
         </div>
         <Categories/>
+        <Features/>
       </div>
     </>
   )
