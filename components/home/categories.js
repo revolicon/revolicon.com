@@ -20,24 +20,27 @@ function BrowserPreview() {
             pauseOnClick={true}
           >
             <div className="flex gap-5 ml-5">
-              {Icons.category.sort(() => .5 - Math.random()).map((item, key) => (
-                <div key={key} className="py-0.5 px-1">
-                  <Link href={{
-                    pathname: '/icons',
-                    query: { c: item.slug },
-                  }}>
-                    <a className="inline-flex gap-3 items-center justify-center px-5 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-blue-50 hover:text-blue-500">
-                      <i className={`text-2xl leading-6 re-line re-${item.icon}`}/>
-                      <p className="text-base font-medium">{item.name}</p>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+              {Icons.category.sort(() => .5 - Math.random()).map((item, key) => <BrowserPreviewItem item={item} key={key}/>)}
             </div>
           </Marquee>
           <BrowserLine/>
         </div>
       ))}
+    </div>
+  )
+}
+function BrowserPreviewItem({ item }) {
+  return (
+    <div className="py-0.5 px-1">
+      <Link href={{
+        pathname: '/icons',
+        query: { c: item.slug },
+      }}>
+        <a className="inline-flex gap-3 items-center justify-center px-5 py-2.5 text-neutral-500 rounded-full transition-all duration-300 ease-smooth hover:bg-blue-50 hover:text-blue-500">
+          <i className={`text-2xl leading-6 re-line re-${item.icon}`}/>
+          <p className="text-base font-medium select-none">{item.name}</p>
+        </a>
+      </Link>
     </div>
   )
 }
