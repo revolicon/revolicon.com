@@ -21,9 +21,9 @@ export default function Brands() {
           width: "100%",
           height: 268
         }}>
-          <Preview type="line" list={[
-            ["shield", "shield", "shield"],
-            ["shield", "shield", "shield"]
+          <Preview type="brands" list={[
+            ["heart-alt", "heart-alt", "heart-alt"],
+            ["heart-alt", "heart-alt", "heart-alt"]
           ]}/>
         </Browser>
       </div>
