@@ -50,8 +50,8 @@ function TechnologyList() {
   return (
     <div className="flex justify-between gap-4">
       {technologyList.map((item, key) => (
-        <div className="flex-1 flex justify-center">
-          <Link href={item.href} key={key}>
+        <div className="flex-1 flex justify-center" key={key}>
+          <Link href={item.href}>
             <a className={item.active ? "cursor-pointer" : "cursor-help"}><TechnologyListItem item={item}/></a>
           </Link>
         </div>
