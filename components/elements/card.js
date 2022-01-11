@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export function Body({ children, className }) {
+  return (
+    <div className={`flex px-12 bg-white rounded-3xl relative ${className}`}>{children}</div>
+  );
+}
 export function Header({ badge, category, title, description, button, children, style, className }) {
   return (
     <div className={`flex flex-col items-start gap-6 w-full ${className}`} style={style}>
       {badge && (
         <div className="border-2 transition-all duration-300 ease-smooth rounded-2xl border-blue-100">
-          <div className="border-4 border-white h-[72px] w-[72px] overflow-hidden rounded-2xl select-none">
+          <div className="border-4 border-white h-18 w-18 overflow-hidden rounded-2xl select-none">
             <Image
               src={`/images/home/category/${badge}.png`}
               alt={`${category} Icon`}

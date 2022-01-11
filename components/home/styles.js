@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import Icons from "/public/icons.json";
 
-import { Header } from "../elements/card";
+import { Header, Body } from "../elements/card";
 import Badge from "../elements/badge";
 import Browser from "../elements/browser";
 import Preview from "../elements/preview";
@@ -34,7 +34,7 @@ function StyleItem({ item, category, setCategory }) {
             item.active ? (category === item.slug ? "border-blue-500" : "border-[#E0E7FF]") : "border-blue-100"
           ].join(" ")}
         >
-          <div className="border-4 border-white h-[72px] w-[72px] overflow-hidden rounded-2xl select-none">
+          <div className="border-4 border-white h-18 w-18 overflow-hidden rounded-2xl select-none">
             <Image
               src={`/images/home/styles/${item.slug}.png`}
               alt={`${item.name} Icon`}
@@ -87,7 +87,7 @@ export default function Styles() {
   let [category, setCategory] = useState("line");
 
   return (
-    <div className="flex justify-between items-end px-12 bg-white rounded-3xl relative">
+    <Body className="justify-between items-end">
       <div className="py-12 h-full">
         <Header
           style={{ maxWidth: 448 }}
@@ -115,6 +115,6 @@ export default function Styles() {
           quality={100}
         />
       </div>
-    </div>
+    </Body>
   );
 }

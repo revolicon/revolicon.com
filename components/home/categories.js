@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 import Icons from "/public/icons.json";
 
-import { Header } from "../elements/card";
+import { Header, Body } from "../elements/card";
 import Browser, { BrowserLine } from "../elements/browser";
 
 function BrowserPreview() {
@@ -47,7 +47,7 @@ function BrowserPreviewItem({ item }) {
 
 export default function Categories() {
   return (
-    <div className="flex justify-between items-end px-12 bg-white rounded-3xl relative">
+    <Body className="justify-between items-end">
       <div className="py-12 h-full">
         <Header
           badge="categories"
@@ -68,6 +68,6 @@ export default function Categories() {
           <BrowserPreview/>
         </Browser>
       </div>
-    </div>
+    </Body>
   )
 }

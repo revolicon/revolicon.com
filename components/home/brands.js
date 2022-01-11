@@ -5,7 +5,7 @@ import Preview from "../elements/preview";
 export default function Brands() {
   return (
     <div className="flex flex-col p-12 pb-0 bg-white rounded-3xl relative">
-      <div className="mb-[72px] h-full">
+      <div className="mb-18 h-full">
         <Header
           badge="brands"
           category="Brands"
