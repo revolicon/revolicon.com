@@ -31,7 +31,7 @@ function StyleItem({ item, category, setCategory }) {
         <div
           className={[
             "border-2 transition-all duration-300 ease-smooth rounded-2xl",
-            item.active ? (category === item.slug ? "border-blue-500" : "border-[#E0E7FF]") : "border-blue-100"
+            item.active ? (category === item.slug ? "border-blue-700" : "border-[#E0E7FF]") : "border-blue-100"
           ].join(" ")}
         >
           <div className="border-4 border-white h-18 w-18 overflow-hidden rounded-2xl select-none">
@@ -49,7 +49,7 @@ function StyleItem({ item, category, setCategory }) {
       <div
         className={[
           `text-lg font-medium leading-6 transition-all duration-300 ease-smooth select-none`,
-          (category === item.slug ? "text-blue-500" : "text-neutral-400")
+          (category === item.slug ? "text-blue-700" : "text-neutral-400")
         ].join(" ")}
       >{item.name}</div>
     </div>

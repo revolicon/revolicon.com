@@ -25,7 +25,7 @@ export default function Header({ location = "default", size }) {
   }
   return (
     <header className={`z-10 ${position[location]}`}>
-      <div className="inline-flex mx-auto bg-blue-400 py-4 pl-8 pr-10 rounded-full gap-8">
+      <div className="inline-flex mx-auto bg-blue-600 py-4 pl-8 pr-10 rounded-full gap-8">
         <Link href="/">
           <a className="w-6 h-6 text-2xl leading-none text-white"><i className="re-brands re-logo"/></a>
         </Link>

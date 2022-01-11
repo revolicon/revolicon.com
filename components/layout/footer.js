@@ -9,8 +9,8 @@ function FooterContent() {
         </svg>
       </div>
       <div className="text-[32px] leading-10 font-semibold tracking-[-1px]">
-        <div className="text-blue-500">Revolutionary</div>
-        <div className="text-neutral-500">Open Source</div>
+        <div className="text-blue-700">Revolutionary</div>
+        <div className="text-neutral-900">Open Source</div>
       </div>
       <div className="text-lg leading-6 text-neutral-400">
         “Do you want to sell sugar water for the rest of your life, or do you want to come with me and change the world?”
@@ -29,7 +29,7 @@ function FooterSocial({ data }) {
 function FooterSocialItem({ icon, href }) {
   return (
     <Link href={href || "#"}>
-      <a target="_blank" className="h-10 w-10 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center text-2xl hover:bg-blue-500 hover:text-white transition-all duration-300 ease-smooth">
+      <a target="_blank" className="h-10 w-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center text-2xl hover:bg-blue-700 hover:text-white transition-all duration-300 ease-smooth">
         <i className={`re-brands re-${icon}`}/>
       </a>
     </Link>
@@ -51,7 +51,7 @@ function FooterList({ data }) {
 function FooterListLink({ href, children }) {
   return (
     <Link href={href || "#"}>
-      <a className="text-lg leading-6 text-neutral-500 hover:underline">{children}</a>
+      <a className="text-lg leading-6 text-neutral-900 hover:underline">{children}</a>
     </Link>
   )
 }

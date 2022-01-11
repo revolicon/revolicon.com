@@ -1,7 +1,7 @@
 function FeaturesItem({ item }) {
   return (
     <div className="flex flex-col bg-white rounded-3xl gap-4 p-8">
-      <div className="flex items-center text-neutral-500 gap-3">
+      <div className="flex items-center text-neutral-900 gap-3">
         <div className="flex text-2xl leading-none"><i className={`re-${item.icon.style} re-${item.icon.name}`}/></div>
         <div className="font-medium text-base">{item.title}</div>
       </div>

@@ -32,10 +32,10 @@ function Actions() {
     <div className="flex flex-col justify-center items-center gap-6">
       <div className="flex items-center gap-4">
         <Link href="/icons">
-          <a><ActionsButton className="bg-neutral-500" icon="face-id-success">Browse Icons</ActionsButton></a>
+          <a><ActionsButton className="bg-neutral-900" icon="face-id-success">Browse Icons</ActionsButton></a>
         </Link>
         <Link href="/start">
-          <a><ActionsButton className="bg-blue-400" icon="shield-tick">Get Started - <span className="font-normal">it’s free</span></ActionsButton></a>
+          <a><ActionsButton className="bg-blue-600" icon="shield-tick">Get Started - <span className="font-normal">it’s free</span></ActionsButton></a>
         </Link>
       </div>
       <div className="flex items-center justify-center gap-2 text-blue-300">
@@ -75,7 +75,7 @@ function ActionsButton({ children, className, icon }) {
 
 export default function Hero() {
   return (
-    <div className="bg-blue-500 overflow-hidden relative pb-54 pt-38">
+    <div className="bg-blue-700 overflow-hidden relative pb-54 pt-38">
       <div className={Styles.hero__image}>
         <Image
           src="/images/home/hero.png"

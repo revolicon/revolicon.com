@@ -24,13 +24,13 @@ export function Header({ badge, category, title, description, button, children, 
         </div>
       )}
       <div className="flex flex-col items-start gap-3 w-full">
-        {category && <div className="text-lg font-medium leading-6 text-blue-500">{category}</div>}
-        {title && <div className="text-[32px] font-semibold leading-10 tracking-title text-neutral-500">{title}</div>}
+        {category && <div className="text-lg font-medium leading-6 text-blue-700">{category}</div>}
+        {title && <div className="text-[32px] font-semibold leading-10 tracking-title text-neutral-900">{title}</div>}
         {(description || children) && <div className="text-lg leading-6 text-neutral-400">{description || children}</div>}
       </div>
       {button && button.href && (
         <Link href={button.href}>
-          <a className="group inline-flex items-center justify-center px-6 py-2 bg-neutral-50 border-2 rounded-full transition-all duration-300 ease-smooth border-blue-100 text-blue-500 hover:bg-blue-100">
+          <a className="group inline-flex items-center justify-center px-6 py-2 bg-neutral-50 border-2 rounded-full transition-all duration-300 ease-smooth border-blue-100 text-blue-700 hover:bg-blue-100">
             {button.content || <i className="re-line re-arrow-right text-2xl leading-6 w-6 h-6"/>}
           </a>
         </Link>

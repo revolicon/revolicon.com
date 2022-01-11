@@ -67,12 +67,12 @@ function TechnologyListItem({ item }) {
         <div
           className={[
             "flex justify-center items-center w-full h-full border-2 border-blue-100 rounded-2xl text-[32px] leading-none transition-all duration-300 ease-smooth",
-            item.active ? "group-hover:border-blue-500" : ""
+            item.active ? "group-hover:border-blue-700" : ""
           ].join(" ")}
         >
           <i className={[
             `re-brands re-${item.icon}`,
-            item.active ? "text-blue-500" : "text-blue-200"
+            item.active ? "text-blue-700" : "text-blue-200"
           ].join(" ")}/>
         </div>
       </div>
