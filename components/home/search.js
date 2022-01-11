@@ -89,7 +89,7 @@ function ListItem({ type, icon }) {
 export default function Search() {
   return (
     <div className="flex flex-col items-center gap-24 px-24 pt-8 bg-white rounded-3xl overflow-hidden">
-      <div className="flex flex-col space-y-4 items-center justify-center w-full max-w-[640px]">
+      <div className="flex flex-col space-y-4 items-center justify-center w-full max-w-160">
         <Input/>
         <Suggestions/>
       </div>

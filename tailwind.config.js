@@ -42,7 +42,12 @@ module.exports = {
         'smooth': 'cubic-bezier(0.6, 0.6, 0, 1)'
       },
       spacing: {
-        '18': '72px'
+        '18': '72px',
+        '96': '24rem'
+      },
+      maxWidth: {
+        '96': '24rem',
+        '160': '40rem',
       }
     },
     screens: {
