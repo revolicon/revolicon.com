@@ -13,9 +13,6 @@ import About from "../components/home/about";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Revolicon</title>
-      </Head>
       <Hero/>
       <div className="container space-y-6 -mt-36 relative z-10 mb-6">
         <Search/>

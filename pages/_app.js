@@ -1,11 +1,17 @@
 import '../styles/globals.scss'
 import Layout from "../components/layout";
+import Head from "next/head";
 
 function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head>
+        <title>Revolicon</title>
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 
