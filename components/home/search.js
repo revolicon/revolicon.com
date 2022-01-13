@@ -20,8 +20,8 @@ function Suggestions() {
 function SuggestionsItem({ icon }) {
   return (
     <Link href={{
-      pathname: "/icons/[icon]",
-      query: { s: Icons.style[0].slug, icon }
+      pathname: "/icons",
+      query: { q: icon, s: Icons.style[0].slug }
     }}>
       <a className="text-blue-700 cursor-pointer">{icon}</a>
     </Link>
