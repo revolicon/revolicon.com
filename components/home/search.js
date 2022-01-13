@@ -4,10 +4,12 @@ import Icons from "/public/icons.json";
 
 function Input() {
   return (
-    <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300">
-      <div className="w-6 h-6 flex flex-none"><i className="re-brands re-search text-2xl leading-none"/></div>
-      <input className="w-full h-full focus:outline-none outline-none font-medium text-neutral-900 placeholder:text-neutral-400 text-lg flex-1 select-none" type="text" placeholder="Search 8,023 icons across all categories"/>
-    </label>
+    <Link href={{ pathname: "/icons" }} passHref>
+      <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300 cursor-pointer">
+        <div className="w-6 h-6 flex flex-none"><i className="re-brands re-search text-2xl leading-none"/></div>
+        <input className="w-full h-full focus:outline-none outline-none font-medium text-neutral-900 placeholder:text-neutral-400 text-lg flex-1 select-none pointer-events-none" type="text" placeholder="Search 8,023 icons across all categories"/>
+      </label>
+    </Link>
   )
 }
 function Suggestions() {
