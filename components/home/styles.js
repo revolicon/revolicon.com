@@ -106,13 +106,14 @@ export default function Styles() {
           <BrowserPreview category={category} icon={BrowserPreviewIcon}/>
         </Browser>
       </div>
-      <div className="absolute right-0 bottom-0 select-none flex">
+      <div className="absolute right-0 bottom-0 select-none flex pointer-events-none">
         <Image
           src="/images/home/styles/effect.png"
           alt="Hero Logo"
           width={450}
           height={392}
           quality={100}
+          draggable={false}
         />
       </div>
     </Body>
