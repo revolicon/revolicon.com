@@ -68,14 +68,16 @@ export default function Icons() {
 
   const onSearchStateChange = (url) => {
     let style = url?.refinementList?.style;
+    let category = url?.refinementList?.category;
     const query = qs.stringify({
       q: url?.query || null,
       s: (style && style.join(",")) || null,
-      p: (url?.page > 1  && url?.page) || null
+      p: (url?.page > 1  && url?.page) || null,
+      c: (category && category.join(",")) || null
     }, { skipNulls: true });
 
-    router.push({ pathname: router.pathname, query })
-  };
+    router.push({ query }).then(() => {})
+   };
 
   useEffect(() => {
     setSearchState(urlToSearchState(router.query))
@@ -92,9 +94,11 @@ export default function Icons() {
         <SearchBox/>
         <div className="flex mt-8">
           <div className="w-3/12">
-            <RefinementList
-              attribute="style"
-            />
+            <div>Style</div>
+            <RefinementList attribute="style"/>
+            <br/><br/>
+            <div>Category</div>
+            <RefinementList attribute="category"/>
           </div>
           <div className="w-9/12 flex flex-col">
             <SearchList/>
