@@ -1,4 +1,12 @@
-import {connectHits, RefinementList, connectSearchBox, InstantSearch, Pagination, ClearRefinements, HierarchicalMenu } from 'react-instantsearch-dom';
+import {
+  connectHits,
+  RefinementList,
+  connectSearchBox,
+  InstantSearch,
+  Pagination,
+  ClearRefinements,
+  HierarchicalMenu
+} from 'react-instantsearch-dom';
 import algoliaSearch from "algoliasearch";
 import Link from "next/link";
 import { useRouter } from 'next/router'
@@ -10,22 +18,33 @@ const searchClient = algoliaSearch(
   "9bff375d0ae5b3f9e85709ee7b5e671e"
 );
 
-const SearchBox = connectSearchBox(({ currentRefinement, isSearchStalled, refine }) => (
-  <div className="flex items-center gap-5">
-    <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300">
-      <div className="w-6 h-6 flex flex-none"><i className="re-brands re-search text-2xl leading-none"/></div>
-      <input
-        value={currentRefinement}
-        onChange={event => refine(event.currentTarget.value)}
-        className="w-full h-full focus:outline-none outline-none font-medium text-neutral-900 placeholder:text-neutral-400 text-lg flex-1 select-none"
-        placeholder="Search 8,023 icons across all categories"
-      />
-    </label>
-    <div className="flex items-center justify-center">
-      <ClearRefinements clearsQuery />
+const SearchBoxCustom = connectSearchBox(({ currentRefinement, refine }) => {
+  let [query, setQuery] = useState(currentRefinement);
+  const updateQuery = (value) => {
+    setQuery(value);
+    refine(value);
+  }
+  useEffect(() => {
+    setQuery(currentRefinement);
+  }, [currentRefinement]);
+
+  return (
+    <div className="flex items-center gap-5">
+      <label className="w-full h-16 flex items-center space-x-4 border-2 border-neutral-100 rounded-full overflow-hidden bg-neutral-50 px-6 focus-within:border-neutral-200 transition-all duration-300">
+        <div className="w-6 h-6 flex flex-none"><i className="re-brands re-search text-2xl leading-none"/></div>
+        <input
+          value={query}
+          onChange={event => updateQuery(event.target.value)}
+          className="w-full h-full focus:outline-none outline-none font-medium text-neutral-900 placeholder:text-neutral-400 text-lg flex-1 select-none"
+          placeholder="Search 8,023 icons across all categories"
+        />
+      </label>
+      <div className="flex items-center justify-center">
+        <ClearRefinements clearsQuery />
+      </div>
     </div>
-  </div>
-));
+  )
+});
 const SearchList = connectHits(({ hits }) => (
   <div className="grid grid-cols-6 gap-4">
     {hits.map((hit, key) => <SearchItem hit={hit} key={key}/>)}
@@ -43,7 +62,6 @@ const SearchItem = ({ hit }) => {
     </Link>
   )
 };
-
 const urlToSearchState = (location) => {
   let {
     q: query,
@@ -91,7 +109,7 @@ export default function Icons() {
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
       >
-        <SearchBox/>
+        <SearchBoxCustom router={searchState}/>
         <div className="flex mt-8">
           <div className="w-3/12">
             <div>Style</div>
