@@ -54,7 +54,7 @@ const SearchItem = ({ hit }) => {
   return (
     <Link href={{ pathname: "/icons/[icon]", query: { s: hit.style, icon: hit.name } }}>
       <a id={`icon-${hit.name}-${hit.style}`} className="cursor-pointer">
-        <div className="w-full rounded-lg bg-white pt-6 px-3 pb-3 flex flex-col justify-center items-center">
+        <div className="w-full rounded-lg bg-white pt-6 px-3 pb-3 flex flex-col justify-center items-center hover:bg-blue-300 transition-all duration-200">
           <i className={[`re-${hit.style} re-${hit.name}`, "text-[32px] h-8"].join(" ")}/>
           <div className="mt-5 text-center text-xs h-7 leading-[14px] line-clamp-2">{hit.name}</div>
         </div>
@@ -94,7 +94,7 @@ export default function Icons() {
       c: (category && category.join(",")) || null
     }, { skipNulls: true });
 
-    router.push({ query }).then(() => {})
+    router.push({ pathname: "/icons", query }).then(() => {})
    };
 
   useEffect(() => {
