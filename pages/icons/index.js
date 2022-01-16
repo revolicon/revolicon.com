@@ -100,7 +100,7 @@ const SearchItem = ({ hit }) => {
   return (
     <Link href={{ pathname: "/icons/[icon]", query: { s: hit.style, icon: hit.name } }}>
       <a id={`icon-${hit.name}-${hit.style}`} className="cursor-pointer">
-        <div className="w-full rounded-lg bg-white pt-6 px-3 pb-3 flex flex-col justify-center items-center hover:bg-blue-300 transition-all duration-200">
+        <div className="w-full rounded-lg bg-white pt-6 px-3 pb-3 flex flex-col justify-center items-center hover:bg-blue-50 border border-neutral-200 hover:border-blue-700 transition-all duration-200">
           <i className={[`re-${hit.style} re-${hit.name}`, "text-[32px] h-8"].join(" ")}/>
           <div className="mt-5 text-center text-xs h-7 leading-[14px] line-clamp-2">{hit.name}</div>
         </div>
