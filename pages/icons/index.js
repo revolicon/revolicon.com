@@ -3,9 +3,8 @@ import {
   RefinementList,
   connectSearchBox,
   InstantSearch,
-  Pagination,
   ClearRefinements,
-  HierarchicalMenu
+  connectPagination
 } from 'react-instantsearch-dom';
 import algoliaSearch from "algoliasearch";
 import Link from "next/link";
@@ -18,8 +17,50 @@ const searchClient = algoliaSearch(
   "6cda4f048bd1d4d368801426caf68c19"
 );
 
-const SearchBoxCustom = connectSearchBox(({ currentRefinement, refine }) => {
+const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) => (
+  <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px mx-auto mt-6">
+    <button
+      onClick={() => refine(currentRefinement - 1)}
+      disabled={currentRefinement === 1}
+      className="relative inline-flex items-center px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+    >
+      Prev
+    </button>
+    {new Array(nbPages).fill(null).map((_, index) => {
+      const page = index + 1;
+
+      return (
+        <a
+          key={index}
+          href="#"
+          className={[
+            "relative inline-flex items-center px-4 py-2 border text-sm font-medium",
+            currentRefinement === page ? "z-10 bg-blue-50 border-blue-500 text-indigo-600" : "bg-white border-gray-300 text-gray-500 hover:bg-gray-50",
+          ].join(" ")}
+          onClick={event => {
+            event.preventDefault();
+            refine(page);
+          }}
+        >
+          {page}
+        </a>
+      );
+    })}
+    <button
+      onClick={event => {
+        refine(currentRefinement + 1);
+      }}
+      disabled={currentRefinement === nbPages}
+      className="relative inline-flex items-center px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+    >
+      Next
+    </button>
+  </nav>
+));
+const SearchBox = connectSearchBox(({ currentRefinement, refine }) => {
   let [query, setQuery] = useState(currentRefinement);
+  const router = useRouter()
+
   const updateQuery = (value) => {
     setQuery(value);
     refine(value);
@@ -39,9 +80,14 @@ const SearchBoxCustom = connectSearchBox(({ currentRefinement, refine }) => {
           placeholder="Search 8,023 icons across all categories"
         />
       </label>
-      <div className="flex items-center justify-center">
-        <ClearRefinements clearsQuery />
-      </div>
+      <button
+        className="flex items-center justify-center h-[60px] w-[60px] flex-none border-neutral-100 rounded-full overflow-hidden bg-neutral-50 border-2 border-neutral-100 hover:border-neutral-200 transition-all duration-300"
+        onClick={() => router.push({ query: {} })}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   )
 });
@@ -110,7 +156,7 @@ export default function Icons() {
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
       >
-        <SearchBoxCustom router={searchState}/>
+        <SearchBox router={searchState}/>
         <div className="flex mt-8">
           <div className="w-3/12">
             <div>Style</div>
