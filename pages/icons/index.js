@@ -14,8 +14,8 @@ import { useEffect, useState } from "react";
 import qs from "qs";
 
 const searchClient = algoliaSearch(
-  "9AX8VM1CNZ",
-  "9bff375d0ae5b3f9e85709ee7b5e671e"
+  "VQ2YQXLVEB",
+  "6cda4f048bd1d4d368801426caf68c19"
 );
 
 const SearchBoxCustom = connectSearchBox(({ currentRefinement, refine }) => {
@@ -65,16 +65,17 @@ const SearchItem = ({ hit }) => {
 const urlToSearchState = (location) => {
   let {
     q: query,
-    s: style = "",
     p: page,
-    c: category,
+    s: style = "",
+    c: categories = "",
   } = location;
 
   return {
     query,
     page: page || 1,
     refinementList: {
-      style: style ? encodeURI(style).split(",") : []
+      style: style ? encodeURI(style).split(",") : [],
+      categories: categories ? encodeURI(categories).split(",") : []
     }
   }
 }
@@ -86,12 +87,12 @@ export default function Icons() {
 
   const onSearchStateChange = (url) => {
     let style = url?.refinementList?.style;
-    let category = url?.refinementList?.category;
+    let categories = url?.refinementList?.categories;
     const query = qs.stringify({
       q: url?.query || null,
       s: (style && style.join(",")) || null,
       p: (url?.page > 1  && url?.page) || null,
-      c: (category && category.join(",")) || null
+      c: (categories && categories.join(",")) || null
     }, { skipNulls: true });
 
     router.push({ pathname: "/icons", query }).then(() => {})
@@ -104,7 +105,7 @@ export default function Icons() {
   return (
     <div className="container pt-24 pb-6">
       <InstantSearch
-        indexName="Icon"
+        indexName="Icons"
         searchClient={searchClient}
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
@@ -113,10 +114,10 @@ export default function Icons() {
         <div className="flex mt-8">
           <div className="w-3/12">
             <div>Style</div>
-            <RefinementList attribute="style"/>
+            <RefinementList attribute="style" operator="or"/>
             <br/><br/>
             <div>Category</div>
-            <RefinementList attribute="category"/>
+            <RefinementList attribute="categories" operator="and"/>
           </div>
           <div className="w-9/12 flex flex-col">
             <SearchList/>
