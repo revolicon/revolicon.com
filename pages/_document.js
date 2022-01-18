@@ -5,9 +5,9 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/55277695a0/Revolicon-Line/style.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/f1c93b472f/Revolicon-Solid/style.css"/>
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/71d52ba9ce/Revolicon-Brands/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/36f265fe3a/Revolicon-Line/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/55e88480a9/Revolicon-Solid/style.css"/>
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/67b869ba27/Revolicon-Brands/style.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
       </Head>
       <body>

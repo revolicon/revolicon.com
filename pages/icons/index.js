@@ -163,7 +163,7 @@ export default function Icons() {
             <RefinementList attribute="style" operator="or"/>
             <br/><br/>
             <div>Category</div>
-            <RefinementList attribute="categories" operator="and"/>
+            <RefinementList attribute="categories" operator="and" limit={1000}/>
           </div>
           <div className="w-9/12 flex flex-col">
             <SearchList/>

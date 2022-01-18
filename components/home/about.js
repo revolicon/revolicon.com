@@ -1,10 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
+import {useEffect, useState} from "react";
+import useSound from "use-sound";
 
+function AboutHead() {
+  let [click, setClick] = useState(0);
+  let [play1] = useSound('/sounds/dtm-1.mp3');
+
+  let handleClick = () => setClick(click + 1);
+  useEffect(() => {
+    if (click === 20) {
+      play1();
+      setClick(0);
+    }
+  }, [click, play1]);
+
+  return (
+    <>
+      <div className="absolute w-20 h-20 bottom-[34px] right-[388px]" onClick={handleClick}/>
+    </>
+  )
+}
 function AboutButton({ className, children, href }) {
   return (
     <Link href={href}>
-      <a className={`flex items-center py-2 px-6 gap-3 rounded-full leading-6 transition-all duration-300 ease-smooth font-medium ${className}`}>{children}</a>
+      <a className={`flex items-center py-2.5 px-6 gap-3 rounded-full leading-6 transition-all duration-300 ease-smooth font-medium select-none ${className}`}>{children}</a>
     </Link>
   )
 }
@@ -25,7 +45,7 @@ export default function About(props) {
         </div>
       </div>
       <div className="relative select-none">
-        <div className="absolute w-20 h-20 bottom-[34px] right-[388px]" onClick={() => alert("Dont Touch ME!")}/>
+        <AboutHead/>
         <div className="flex pointer-events-none">
           <Image
             src={`/images/home/about/map.png`}
