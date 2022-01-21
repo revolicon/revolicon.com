@@ -9,7 +9,7 @@ function AboutHead() {
 
   let handleClick = () => setClick(click + 1);
   useEffect(() => {
-    if (click === 20) {
+    if (click === 3) {
       play1();
       setClick(0);
     }
