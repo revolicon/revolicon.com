@@ -1,0 +1,14 @@
+.start {
+  @apply bg-blue-900 rounded-3xl px-12 pb-12 pt-24 flex flex-col items-center gap-24;
+  background-image: url("/images/home/start/background.png");
+  background-size: 1128px;
+  background-repeat: no-repeat;
+
+  &__gradient {
+    font-weight: 700;
+    color: #2BDCF4;
+    background: linear-gradient(90deg, #2BDCF4 0%, #2E5BFB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

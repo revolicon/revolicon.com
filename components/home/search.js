@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import Icons from "/public/icons.json";
-
 function Input() {
   return (
     <Link href={{ pathname: "/icons" }} passHref>

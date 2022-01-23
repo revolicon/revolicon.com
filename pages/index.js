@@ -8,6 +8,7 @@ import Brands from "../components/home/brands";
 import Animations from "../components/home/animations";
 import Features from "../components/home/features";
 import Technology from "../components/home/technology";
+import Start from "../components/home/start";
 import About from "../components/home/about";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Categories/>
         <Technology/>
         <Features/>
+        <Start/>
         <About/>
       </div>
     </>
