@@ -8,7 +8,7 @@ import Styles from '/styles/home/Heros.module.scss'
 
 function Text() {
   return (
-    <div className="flex text-neutral-50 flex flex-col justify-center items-center gap-4">
+    <div className="text-neutral-50 flex flex-col justify-center items-center gap-4">
       <div className="select-none">
         <Image
           src="/images/logo-white.svg"
