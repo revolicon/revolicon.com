@@ -81,7 +81,7 @@ const SearchBox = connectSearchBox(({ currentRefinement, refine }) => {
         />
       </label>
       <button
-        className="flex items-center justify-center h-[60px] w-[60px] flex-none border-neutral-100 rounded-full overflow-hidden bg-neutral-50 border-2 border-neutral-100 hover:border-neutral-200 transition-all duration-300"
+        className="flex items-center justify-center h-[60px] w-[60px] flex-none rounded-full overflow-hidden bg-neutral-50 border-2 border-neutral-100 hover:border-neutral-200 transition-all duration-300"
         onClick={() => router.push({ query: {} })}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
